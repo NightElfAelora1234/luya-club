@@ -1,0 +1,23 @@
+{
+  "name": "luya-club",
+  "version": "1.0.0",
+  "private": false,
+  "type": "module",
+  "description": "LUYA CLUB — a build-free three.js South China Sea dive and lure-fishing experience.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node tools/serve.mjs",
+    "music": "python tools/make-music.py"
+  },
+  "keywords": [
+    "three.js",
+    "webgl",
+    "fishing",
+    "game",
+    "ocean",
+    "south-china-sea"
+  ]
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#041015">
+<title>路亚俱乐部 · LUYA CLUB — 南海</title>
+<meta name="description" content="路亚俱乐部 · 一场从南海海面潜入 96 米海床的路亚之旅。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2306151b'/%3E%3Cpath d='M7 20c5-7 13-9 18-5-4 8-13 10-18 5z' fill='%23d9a86c'/%3E%3Ccircle cx='22' cy='16' r='1.2' fill='%2306151b'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="./css/base.css">
+<link rel="stylesheet" href="./css/campaign.css">
+<link rel="stylesheet" href="./css/shop.css">
+<link rel="stylesheet" href="./css/fishing.css">
+<script type="importmap">
+{
+  "imports": {
+    "three": "./vendor/three/build/three.module.js",
+    "three/addons/": "./vendor/three/examples/jsm/"
+  }
+}
+</script>
+</head>
+<body>
+<canvas id="gl" aria-label="南海三维海面"></canvas>
+
+<div id="ui">
+  <header id="nav">
+    <a class="brand" href="#" id="brandHome" aria-label="路亚俱乐部">
+      <span class="brand-cn">路亚俱乐部</span>
+      <span class="brand-en">LUYA CLUB · SOUTH CHINA SEA</span>
+    </a>
+    <nav class="nav-links" aria-label="主导航">
+      <button class="nav-link" data-goto="sea">海域<span>SEA</span></button>
+      <button class="nav-link" data-goto="gear">装备<span>GEAR</span></button>
+      <button class="nav-link" data-goto="log">日志<span>LOG</span></button>
+      <button class="icon-btn" id="soundToggle" aria-label="声音开关" title="声音">
+        <span class="sound-bars"><i></i><i></i><i></i></span>
+      </button>
+    </nav>
+  </header>
+
+  <aside id="depthHud" aria-hidden="true">
+    <div class="hud-label">DEPTH <span>深度</span></div>
+    <div class="depth-readout"><span id="depthValue">00.0</span><em>M</em></div>
+    <div class="depth-ruler"><div class="depth-marker" id="depthMarker"></div><span class="tick t0"></span><span class="tick t25"></span><span class="tick t50"></span><span class="tick t75"></span><span class="tick t100"></span></div>
+    <div class="hud-meta"><span id="waterTemp">27.9°C</span><span id="waterPressure">1.0 ATM</span></div>
+  </aside>
+
+  <div id="captionWrap">
+    <div class="caption-rule"></div>
+    <div class="caption-index" id="captionIndex">01</div>
+    <div class="caption-cn" id="captionTitle">南海 · 初见</div>
+    <div class="caption-en" id="captionSub">SOUTH CHINA SEA</div>
+  </div>
+
+  <div id="scrollHint">
+    <span class="hint-line"></span>
+    <span class="hint-cn">向下滚动，下潜</span>
+    <span class="hint-en">SCROLL TO DIVE</span>
+  </div>
+
+  <div id="rodPrompt" class="hidden">
+    <div class="rod-prompt-ring"></div>
+    <div class="rod-prompt-copy">
+      <b>点击鱼竿</b>
+      <span>回到海面 · RETURN TO SURFACE</span>
+    </div>
+  </div>
+
+  <div id="shop" class="screen" aria-hidden="true"></div>
+  <div id="fishing" class="screen" aria-hidden="true"></div>
+
+  <div id="toast" role="status"></div>
+  <div id="flash"></div>
+  <div id="surfaceWash"></div>
+  <div class="vignette" aria-hidden="true"></div>
+</div>
+
+<main id="scroller" aria-hidden="true"></main>
+
+<div id="loader">
+  <div class="loader-brand">
+    <span class="loader-cn">路亚俱乐部</span>
+    <span class="loader-en">LUYA CLUB</span>
+  </div>
+  <div class="loader-sub" id="loaderStatus">正在校准海面 · CALIBRATING SURFACE</div>
+  <div class="loader-bar"><i id="loaderBar"></i></div>
+  <div class="loader-depth">SOUTH CHINA SEA &nbsp;·&nbsp; 18°11′N 109°42′E</div>
+</div>
+
+<noscript><div class="noscript">本页面需要启用 JavaScript 与 WebGL2。</div></noscript>
+<script type="module" src="./js/main.js"></script>
+</body>
+</html>
