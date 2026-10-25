@@ -1,4 +1,5 @@
 # LUYA CLUB · 路亚俱乐部
+🎮 在线试玩：https://nightelfaelora1234.github.io/luya-club/
 
 **A build-free three.js South China Sea dive and first-person lure-fishing experience.**
 
